@@ -16,9 +16,10 @@ exports.getBooks = (req, res) => {
     const id = req.params.id
     const aluna = alunas.find(aluna => aluna.id == id)
     const livros = aluna.livros
+    const livrosLidos = livros.filter(livro => livro.leu == 'true')
     const titulo = livros.map(livro => livro.titulo)
     
-    res.status(200).send(titulo)
+    res.status(200).send(livrosLidos)
     
 }
 
