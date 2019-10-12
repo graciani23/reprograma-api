@@ -3,6 +3,6 @@ const router = express.Router()
 const controller = require("../controllers/professorasController")
 
 router.get('/', controller.get)
-router.get('/nome', controller.getNome)
-
+router.get('/:id', controller.getById)
+router.get('/:id/semCpf', controller.getSemCpf)
 module.exports = router
